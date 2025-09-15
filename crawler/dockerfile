@@ -1,0 +1,22 @@
+FROM python:3.13-slim
+
+WORKDIR /app
+
+# 크롬 + 드라이버 설치 (Debian/Ubuntu 계열)
+RUN apt-get update && apt-get install -y \
+    wget curl unzip gnupg \
+    chromium chromium-driver \
+    && rm -rf /var/lib/apt/lists/*
+
+# 파이썬 패키지 설치
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# 크롤러 코드 복사
+COPY crawler.py .
+
+# Selenium에서 chromium 인식
+ENV CHROME_BIN=/usr/bin/chromium
+ENV CHROMEDRIVER_PATH=/usr/bin/chromedriver
+
+ENTRYPOINT ["python", "crawler.py"]
