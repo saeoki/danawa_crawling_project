@@ -37,8 +37,8 @@
     (직렬 수집 대비 3배 빠른 성능)
     
 4. danawa_crawl_dag DAG를 실행하기만 하면 수집부터 DB 저장까지 자동으로 진행
+<img width="476" height="320" alt="image" src="https://github.com/user-attachments/assets/aa31e88e-cb5d-43c2-9804-928baffc9ec5" />
 
-![image.png](attachment:53472b94-c769-49a9-a396-39a636b24ab6:image.png)
 
 # 📌 How to use
 
@@ -54,4 +54,4 @@ Airflow Web UI 접속 -> danawa_crawl_dan ON
 
 dag 실행 시에 3개의 컨테이너가 동시 생성, 병렬 실행 (종료 후 자동으로 사라짐)
 
-![image.png](attachment:0d81bf09-7ed3-49cd-b35f-7a5a2eecdd9a:image.png)
+<img width="700" height="262" alt="image" src="https://github.com/user-attachments/assets/b303d6b8-9511-409c-8a34-8107a2b26233" />
