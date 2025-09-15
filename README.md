@@ -1,13 +1,11 @@
 # 📌 Project Purpose
 
 가격비교 사이트 ‘다나와’에서 전자제품 데이터와 최저가를 자동 수집하는 파이프라인을 구현
-
 ‘노트북’, ‘데스크탑’, ‘모니터’ 제품 군의 데이터를 각각 300개씩 수집하고 DB에 담는다.
 
 # 📌 Plan
 
 `Docker-compose` 를 사용하여 컨테이너화 된 파이프라인 환경을 구축
-
 - 자동화 툴 : Airflow, 메타데이터 DB 및 제품 데이터베이스 : Postgres
 - 크롤링 코드를 Docker Image로 빌드하고 DockerOperator를 사용하여 Docker Image를 task로 병렬 실행, Dag 실행 시간을 단축
 
