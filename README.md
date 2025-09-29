@@ -36,7 +36,7 @@
     
     (직렬 수집 대비 3배 빠른 성능)
     
-4. danawa_crawl_dag DAG를 실행하기만 하면 수집부터 DB 저장까지 자동으로 진행
+4. danawa_crawl_dag DAG를 실행하기만 하면 수집부터 DB 생성 및 저장까지 자동으로 진행
 <img width="476" height="320" alt="image" src="https://github.com/user-attachments/assets/aa31e88e-cb5d-43c2-9804-928baffc9ec5" />
 
 
