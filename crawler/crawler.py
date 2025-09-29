@@ -52,6 +52,22 @@ def abs_img(src):
         return ""
     return "https:" + src if src.startswith("//") else src
 
+# 테이블 생성 보장
+def create_product_table(cur):
+    cur.execute("""
+    CREATE TABLE IF NOT EXISTS product (
+        id SERIAL PRIMARY KEY,
+        category     VARCHAR(50)  NOT NULL,
+        prod_name    VARCHAR(255) NOT NULL,
+        spec_list    TEXT,
+        review_score DOUBLE PRECISION,
+        review_count INT,
+        lowest_price INT,
+        prod_img     VARCHAR(500),
+        created_at   TIMESTAMP DEFAULT NOW(),
+        UNIQUE (category, prod_name)
+    );
+    """)
 
 # DB 저장
 def save_to_postgres(category: str, items: List[Product]):
@@ -66,6 +82,8 @@ def save_to_postgres(category: str, items: List[Product]):
             password=os.getenv("PGPASSWORD", "airflow"),
         )
         cur = conn.cursor()
+
+        create_product_table(cur)
 
         records = [
             (

@@ -8,14 +8,14 @@ with DAG(
     dag_id="danawa_crawl_dag",
     default_args=default_args,
     description="다나와 사이트에서 노트북, 데스크탑, 모니터 카테고리를 크롤링하여 최저가 및 스펙 정보 수집",
-    schedule_interval="@daily",
+    schedule_interval=None,
     start_date=datetime(2025, 9, 15),
     catchup=False,
 ) as dag:
 
     crawl_notebook = DockerOperator(
         task_id="crawl_notebook",
-        image="danawa_crawler:latest",
+        image="danawa_crawler:ver2",
         api_version="auto",
         auto_remove=True,
         command=None,
@@ -34,7 +34,7 @@ with DAG(
 
     crawl_desktop = DockerOperator(
         task_id="crawl_desktop",
-        image="danawa_crawler:latest",
+        image="danawa_crawler:ver2",
         api_version="auto",
         auto_remove=True,
         command=None,
@@ -53,7 +53,7 @@ with DAG(
 
     crawl_monitor = DockerOperator(
         task_id="crawl_monitor",
-        image="danawa_crawler:latest",
+        image="danawa_crawler:ver2",
         api_version="auto",
         auto_remove=True,
         command=None,
