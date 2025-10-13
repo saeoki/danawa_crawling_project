@@ -29,6 +29,7 @@
     | 생성 타임스탬프 | created_at | TIMESTAMP |  |
 
 ## 크롤링 설계 전략
+<img width="716" height="518" alt="다나와 아키" src="https://github.com/user-attachments/assets/7f76042e-b92f-42c5-b361-93b61bc2cb5a" />
 
 1. 크롤링 효율성을 위해 동적 Action이 필요한 경우에만 Selenium을 사용하고 HTML 파싱은 BS4를 사용
 2. 코드 재사용성 및 공유의 용이성을 위해 Docker Image 빌드 및 Docker Compose만으로 개발 환경이 전부 펼쳐지도록 구성
