@@ -48,7 +48,12 @@ docker build -t danawa_crawler:latest ./crawler
 
 docker compose up -d
 
-Airflow Web UI 접속 -> danawa_crawl_dan ON
+#psql 컨테이너 쉘에 접속 -> danawa DB 생성
+docker exec -it <postgres container ID> bash
+psql -U airflow
+create database danawa;
+
+Airflow Web UI 접속 -> danawa_crawl_dag ON
 #   (기본: http://localhost:8080 , 아이디/비번: airflow/airflow)
 ```
 
